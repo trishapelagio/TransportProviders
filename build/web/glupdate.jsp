@@ -76,7 +76,7 @@
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
                 Booking<br>
-                Creation
+                Update
             </h1>
         </div>
         <br>
