@@ -29,6 +29,7 @@ public class Booking {
 
     public int booking_status;
     
+    
     public void addBooking() {
         try {
             // 1. Connect to the database
@@ -198,6 +199,8 @@ public class Booking {
             System.out.println("something went wrong " + e.getMessage());
         }  
     }
+    
+
     
     
 }
