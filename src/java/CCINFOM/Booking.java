@@ -31,13 +31,9 @@ public class Booking {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?"+"user=root&password=p@ssword");
             // 2. Prepare the SQL Statement
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO BOOKINGS (booking_no,booked_date,num_hours,totalcost,num_people,status,isGroup,group_no,offerid) VALUES (?,?,?,?,?,?,?,?,?)");
+           
             
-            PreparedStatement stmt2 = conn.prepareStatement("SELECT MAX(booking_no) AS a FROM bookings");
-            ResultSet rs = stmt2.executeQuery();
-            int x = Integer.parseInt(rs.getString("a")) + 1;
-            System.out.println("HELLOOO" + x);
-            
-                stmt.setInt(1,x);
+                stmt.setInt(1,Integer.parseInt(booking_no));
                 stmt.setString(2,booked_date);
                 stmt.setInt(3,Integer.parseInt(numhours));
                 stmt.setFloat(4,Float.parseFloat(totalcost));
@@ -57,7 +53,6 @@ public class Booking {
             
             // 5. Disconnect
             stmt.close();
-            stmt2.close();
             conn.close();
             
         }

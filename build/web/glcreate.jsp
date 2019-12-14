@@ -90,6 +90,10 @@
                                                                 <br>
                                                                 <br>
                                                                 <div class="username">
+                                                                    <label for="bn"><small>Booking Number</small></label>
+									<input type='text' placeholder='6000100' name="booking_no" id="bn"/>
+								</div>
+                                                                <div class="username">
                                                                     <label for="bday"><small>Book Date</small></label>
 									<input type='text' placeholder='2019-12-31' name="booked_date" id="bday"/>
 								</div>
