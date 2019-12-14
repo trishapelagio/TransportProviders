@@ -86,68 +86,41 @@
                 	<div class="login-page-content">
                 		<div class="login-form">
 							<form action="m2createprocess.jsp">
-                                                            <span><strong>Booking Information</strong></span>
+                                                            <span><strong>Create an Offering</strong></span>
                                                                 <br>
                                                                 <br>
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Booking Number</small></label>
-									<input type='text' placeholder='6000100' name="booking_no" id="bn"/>
+                                                                    <label for="bn"><small>Offering ID</small></label>
+									<input type='text' placeholder='5000100' name="offerid" id="bn"/>
 								</div>
                                                                 <div class="username">
-                                                                    <label for="bday"><small>Book Date</small></label>
-									<input type='text' placeholder='2019-12-31' name="booked_date" id="bday"/>
+                                                                    <label for="np"><small>Email</small></label>
+									<input type='text' placeholder='juan@zero.com' name="email" id="np"/>
+								</div>
+                                                                <br>
+                                                                
+                                                                <div class="username">
+                                                                    <label for="bday"><small>Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="date" id="bday"/>
 								</div>
                                                             	
                                                                 <div class="name">
                                                                         <div class="row">
 										<div class="col-md-6">
-                                                                                    <small>Number of Hours</small>
+                                                                                    <small>Base Rate</small>
 										</div>
 										<div class="col-md-6">
-                                                                                    <small>Total Cost</small>
+                                                                                    <small>Hour Rate</small>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
-											<input type="text" placeholder="4" name="num_hours">
+											<input type="text" placeholder="1000" name="base_rate">
 										</div>
 										<div class="col-md-6">
-											<input type="text" placeholder="1000" name="totalcost">
+											<input type="text" placeholder="1000" name="hour_rate">
 										</div>
 									</div>
-								</div>
-                                                                <br>
-                                                                
-                                                                <div class="username">
-                                                                    <label for="np"><small>Number of People</small></label>
-									<input type='text' placeholder='10' name="num_people" id="np"/>
-								</div>
-                                                                <br>
-                                                                <div class="username">
-                                                                                          <% Booking book = new Booking();
-									book.getGroupNos();
-                                                                    %>
-                                                                    <small>Select Group:</small> <select name="group_no">
-                                                                        <%  int index;
-                                                                            int size = book.groupnos.size();
-                                                                            for(index=0;index<size;index++) { %>
-                                                                            <option value ="<%=book.groupnos.get(index)%>"> <%=book.groupnos.get(index)%> </option>
-                                                                        <% }
-                                                                        %> 
-                                                                    </select> 
-                                                                </div>
-                                                                <br>
-                                                                <div class="username">
-                                                                    <% 
-									book.getOffers();
-                                                                    %>
-                                                                    <small>Select Offer:</small> <select name="offerid">
-                                                                        <%  size = book.offers.size();
-                                                                            for(index=0;index<size;index++) { %>
-                                                                            <option value ="<%=book.offers.get(index)%>"> <%=book.offers.get(index)%> </option>
-                                                                        <% }
-                                                                        %>
-                                                                </select>           
 								</div>
                                                                 <br>
                                                                 
@@ -161,7 +134,7 @@
                 </div>
         	</div>
         </div>
-    </section
+    </section>
     <!--== Login Page Content End ==-->
 
     <!--== Scroll Top Area Start ==-->
