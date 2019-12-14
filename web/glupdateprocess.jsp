@@ -92,19 +92,61 @@
                         <div class="display-table">
                             <div class="display-table-cell">
                                 <div class="slider-right-text">
-                                    <h1>SUCCESS</h1>
-                                    <p>Booking Succesfully Added</p>
+                                    <h1>WE ARE PROCESSING YOUR REQUEST</h1>
+                                    <p>PLEASE WAIT</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+        <%  // Capture the data sent from the form
+            String v_bookingno = request.getParameter("booking_no");
+            String v_date       = request.getParameter("booked_date");
+            String v_savedate       = request.getParameter("saved_date");
+            String v_confirmdate    = request.getParameter("confirm_date");
+            String v_canceldate    = request.getParameter("cancel_date");
+            String v_numhours     = request.getParameter("num_hours");
+            String v_totalcost     = request.getParameter("totalcost");
+            String v_numpeople     = request.getParameter("num_people");
+            String v_groupno     = request.getParameter("group_no");
+            String offerid     = request.getParameter("offerid");
+            
+            Booking book = new Booking();
+            // Instantiate the class that will process the registration
+                
+                book.booking_no = v_bookingno;
+                book.booked_date = v_date;
+                book.numhours = v_numhours;
+                book.totalcost = v_totalcost;
+                book.numpeople = v_numpeople;
+                book.groupno = v_groupno;
+                book.offerid = offerid;
+                book.saved_date = v_savedate;
+                book.confirmed_date = v_confirmdate;
+                book.cancelled_date = v_canceldate;
+                
+
+                book.updateBooking();
+            //emp.register();
+       
+            // Redirect to the correct message page
+            String redirectURL;
+            if (book.booking_status==1)
+                redirectURL = "success.html";
+            else {
+                redirectURL = "fail.html";
+            }
+            response.sendRedirect(redirectURL);
+        %>                 
+
+
                 </div>
                 <br>
                 <br>
                 <br>
                 <br>
                 
-                <form action = "index.html" align="center">
+                <form action = "" align="center">
                             <div class="log-btn btn-lg">
 				<button type="submit">               Proceed             </button>
                             </div>

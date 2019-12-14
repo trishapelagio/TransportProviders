@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Create</title>
+    <title>Update</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -85,7 +85,7 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="glcreateprocess.jsp">
+							<form action="glupdateprocess.jsp">
                                                             <span><strong>Booking Information</strong></span>
                                                                 <br>
                                                                 <br>
@@ -96,6 +96,18 @@
                                                                 <div class="username">
                                                                     <label for="bday"><small>Book Date</small></label>
 									<input type='text' placeholder='2019-12-31' name="booked_date" id="bday"/>
+								</div>
+                                                                <div class="username">
+                                                                    <label for="sday"><small>Saved Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="saved_date" id="sday"/>
+								</div>
+                                                                <div class="username">
+                                                                    <label for="cday"><small>Confirm Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="confirm_date" id="cday"/>
+								</div>
+                                                                <div class="username">
+                                                                    <label for="clday"><small>Cancel Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="cancel_date" id="clday"/>
 								</div>
                                                             	
                                                                 <div class="name">

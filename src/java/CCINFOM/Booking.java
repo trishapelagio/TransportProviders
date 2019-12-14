@@ -19,6 +19,10 @@ public class Booking {
     public String groupno;
     public String offerid;
     
+    public String saved_date;
+    public String confirmed_date;
+    public String cancelled_date;
+    
 
     public int booking_status;
     
@@ -107,5 +111,49 @@ public class Booking {
         } catch (Exception e) {
             System.out.println("something went wrong " + e.getMessage());
         }        
+    }
+    
+    public void updateBooking() {
+        try {
+            // 1. Connect to the database
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection conn;
+            
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?"+"user=root&password=p@ssword");
+            // 2. Prepare the SQL Statement
+            PreparedStatement stmt = conn.prepareStatement("UPDATE BOOKINGS SET booked_date=?,num_hours=?,totalcost=?,num_people=?,status=?,isGroup=?,group_no=?,offerid=?, saved_date=?, confirmed_date=?, cancelled_date=? WHERE booking_no=?");
+                
+                stmt.setString(1,booked_date);
+                stmt.setInt(2,Integer.parseInt(numhours));
+                stmt.setFloat(3,Float.parseFloat(totalcost));
+                stmt.setInt(4,Integer.parseInt(numpeople));
+                stmt.setString(5,"P");
+                if(Integer.parseInt(numpeople)>1)
+                    stmt.setString(6,"Y");
+                else
+                    stmt.setString(6,"N");
+                stmt.setInt(7,Integer.parseInt(groupno));
+                stmt.setInt(8,Integer.parseInt(offerid));
+                stmt.setString(9,saved_date);
+                stmt.setString(10,confirmed_date);
+                stmt.setString(11,cancelled_date);
+                stmt.setInt(12,Integer.parseInt(booking_no));
+                
+                // 3. Execute the SQL Statement
+                stmt.executeUpdate();
+            
+            // 4. Process the results
+            booking_status = 1;
+            
+            // 5. Disconnect
+            stmt.close();
+            conn.close();
+            
+        }
+        
+        catch(Exception e) {
+            booking_status=0;
+            System.out.println("something went wrong " + e.getMessage());
+        }
     }
 }
