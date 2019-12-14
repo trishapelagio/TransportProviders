@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <%@page import = "CCINFOM.*, java.util.*"%>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Create</title>
+    <title>Processing</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -48,93 +47,96 @@
         </div>
     </div>
     <!--== Preloader Area End ==-->
+
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top" style="background-color: black">
+    <header id="header-area" class="fixed-top">
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
-
-                            <img src = "assets/img/logo.png">            
-                        
-                        </a>
+                        <img src = "assets/img/logo.png"> 
                     </div>
                     <!--== Logo End ==-->
 
+                    <!--== Main Menu Start
+                    <div class="col-lg-8 d-none d-xl-block">
+                        <nav class="mainmenu alignright">
+                            <ul>
+                                <li><a href="home.html">Home</a> </li>
+                                <li><a href="login.html">Log-in</a></li>
+                                <li><a href="registerindex.html">Register</a></li>
+                                <li><a href="carss.html">Cars</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    Main Menu End ==-->
                 </div>
             </div>
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--r== Header Area End ==-->
+    <!--== Header Area End ==-->
 
-    <!--== Login Page Content Start ==-->
-    <section id="lgoin-page-wrap" class="section-padding">
-        <div id="cur">
-            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Group<br>
-                Creation
-            </h1>
-        </div>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-8 m-auto">
-                	<div class="login-page-content">
-                		<div class="login-form">
-							<form action="m1createprocess.jsp">
-                                                            <span><strong>Group Information</strong></span>
-                                                                <br>
-                                                                <br>
-                                                                <div class="username">
-                                                                    <label for="bn"><small>Group ID</small></label>
-									<input type='text' placeholder='4000080' name="groupid" id="bn"/>
-								</div>
-                                                                
-                                                                <div class="name">
-                                                                        <div class="row">
-										<div class="col-md-6">
-                                                                                    <small>Start Date</small>
-										</div>
-										<div class="col-md-6">
-                                                                                    <small>End Date</small>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<input type="text" placeholder="2019-12-31" name="start_date">
-										</div>
-										<div class="col-md-6">
-											<input type="text" placeholder="2019-12-31" name="end_date">
-										</div>
-									</div>
-								</div>
-                                                                <br>
-                                                                
-                                                                <div class="username">
-                                                                    <label for="np"><small>Email of the Representative</small></label>
-									<input type='text' placeholder="username@address.com" name="rep_email" id="np"/>
-								</div>
-                                                                <br>
-                                                                
-                                                                
-                                                                <br>
-                                                                
-                                                                <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
-								</div>
-                                                                
-							</form>
-                		</div>
-                	</div>
+    <!--== Slider Area Start ==-->
+    <section id="slider-area">
+        <!--== slide Item One ==-->
+        <div class="single-slide-item overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        
+                    </div>
+                    <div class="col-lg-7 text-right">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="slider-right-text">
+                                    <h1>WE ARE PROCESSING YOUR REQUEST</h1>
+                                    <p>PLEASE WAIT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+        <%  // Capture the data sent from the form
+            String v_groupid = request.getParameter("groupid");
+
+            
+            TGroups tg = new TGroups();
+
+            // Instantiate the class that will process the registration
+                
+            tg.groupid = v_groupid;
+
+            tg.deleteGroup();
+            //emp.register();
+       
+            // Redirect to the correct message page
+            String redirectURL;
+            if (tg.group_status == 1)
+                redirectURL = "success.html";
+            else {
+                redirectURL = "fail.html";
+            }
+            response.sendRedirect(redirectURL);
+        %>                 
                 </div>
-        	</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                <form action = "" align="center">
+                            <div class="log-btn btn-lg">
+				<button type="submit">               Proceed             </button>
+                            </div>
+                </form>
+            </div>
         </div>
-    </section
-    <!--== Login Page Content End ==-->
+        <!--== slide Item One ==-->
+    </section>
+    <!--== Slider Area End ==-->
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
@@ -170,8 +172,9 @@
     <!--=== Slicknav Min Js ===-->
     <script src="assets/js/plugins/slicknav.min.js"></script>
 
-    <!--=== Main Js ===-->
+    <!--=== Mian Js ===-->
     <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

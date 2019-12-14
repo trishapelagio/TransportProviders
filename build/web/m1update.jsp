@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Create</title>
+    <title>Update</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
                 Group<br>
-                Creation
+                Update
             </h1>
         </div>
         <br>
@@ -85,42 +85,82 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m1createprocess.jsp">
+							<form action="glupdateprocess.jsp">
                                                             <span><strong>Group Information</strong></span>
                                                                 <br>
                                                                 <br>
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Group ID</small></label>
-									<input type='text' placeholder='4000080' name="groupid" id="bn"/>
+                                                                    <label for="bn"><small>Booking Number</small></label>
+									<input type='text' placeholder='6000100' name="booking_no" id="bn"/>
 								</div>
-                                                                
+                                                                <div class="username">
+                                                                    <label for="bday"><small>Book Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="booked_date" id="bday"/>
+								</div>
+                                                                <div class="username">
+                                                                    <label for="sday"><small>Saved Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="saved_date" id="sday"/>
+								</div>
+                                                                <div class="username">
+                                                                    <label for="cday"><small>Confirm Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="confirm_date" id="cday"/>
+								</div>
+                                                                <div class="username">
+                                                                    <label for="clday"><small>Cancel Date</small></label>
+									<input type='text' placeholder='2019-12-31' name="cancel_date" id="clday"/>
+								</div>
+                                                            	
                                                                 <div class="name">
                                                                         <div class="row">
 										<div class="col-md-6">
-                                                                                    <small>Start Date</small>
+                                                                                    <small>Number of Hours</small>
 										</div>
 										<div class="col-md-6">
-                                                                                    <small>End Date</small>
+                                                                                    <small>Total Cost</small>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
-											<input type="text" placeholder="2019-12-31" name="start_date">
+											<input type="text" placeholder="4" name="num_hours">
 										</div>
 										<div class="col-md-6">
-											<input type="text" placeholder="2019-12-31" name="end_date">
+											<input type="text" placeholder="1000" name="totalcost">
 										</div>
 									</div>
 								</div>
                                                                 <br>
                                                                 
                                                                 <div class="username">
-                                                                    <label for="np"><small>Email of the Representative</small></label>
-									<input type='text' placeholder="username@address.com" name="rep_email" id="np"/>
+                                                                    <label for="np"><small>Number of People</small></label>
+									<input type='text' placeholder='10' name="num_people" id="np"/>
 								</div>
                                                                 <br>
-                                                                
-                                                                
+                                                                <div class="username">
+                                                                                          <% Booking book = new Booking();
+									book.getGroupNos();
+                                                                    %>
+                                                                    <small>Select Group:</small> <select name="group_no">
+                                                                        <%  int index;
+                                                                            int size = book.groupnos.size();
+                                                                            for(index=0;index<size;index++) { %>
+                                                                            <option value ="<%=book.groupnos.get(index)%>"> <%=book.groupnos.get(index)%> </option>
+                                                                        <% }
+                                                                        %> 
+                                                                    </select> 
+                                                                </div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <% 
+									book.getOffers();
+                                                                    %>
+                                                                    <small>Select Offer:</small> <select name="offerid">
+                                                                        <%  size = book.offers.size();
+                                                                            for(index=0;index<size;index++) { %>
+                                                                            <option value ="<%=book.offers.get(index)%>"> <%=book.offers.get(index)%> </option>
+                                                                        <% }
+                                                                        %>
+                                                                </select>           
+								</div>
                                                                 <br>
                                                                 
                                                                 <div class="log-btn">

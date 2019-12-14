@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Create</title>
+    <title>Update</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -75,8 +75,8 @@
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Group<br>
-                Creation
+                Delete<br>
+                Tour Group
             </h1>
         </div>
         <br>
@@ -85,48 +85,16 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m1createprocess.jsp">
-                                                            <span><strong>Group Information</strong></span>
-                                                                <br>
-                                                                <br>
+							<form action="m1deleteprocess.jsp">
+
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Group ID</small></label>
-									<input type='text' placeholder='4000080' name="groupid" id="bn"/>
-								</div>
-                                                                
-                                                                <div class="name">
-                                                                        <div class="row">
-										<div class="col-md-6">
-                                                                                    <small>Start Date</small>
-										</div>
-										<div class="col-md-6">
-                                                                                    <small>End Date</small>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<input type="text" placeholder="2019-12-31" name="start_date">
-										</div>
-										<div class="col-md-6">
-											<input type="text" placeholder="2019-12-31" name="end_date">
-										</div>
-									</div>
-								</div>
+                                                                    <label for="bn"><small>Enter Group Number to Delete</small></label>
+									<input type='text' placeholder='4000000' name="groupid" id="bn"/>
+                                                                </div>
                                                                 <br>
-                                                                
-                                                                <div class="username">
-                                                                    <label for="np"><small>Email of the Representative</small></label>
-									<input type='text' placeholder="username@address.com" name="rep_email" id="np"/>
-								</div>
-                                                                <br>
-                                                                
-                                                                
-                                                                <br>
-                                                                
                                                                 <div class="log-btn">
 									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
 								</div>
-                                                                
 							</form>
                 		</div>
                 	</div>

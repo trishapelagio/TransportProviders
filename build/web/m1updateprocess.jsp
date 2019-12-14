@@ -100,32 +100,46 @@
                     </div>
                     
         <%  // Capture the data sent from the form
-            String v_groupid = request.getParameter("groupid");
-            String v_startdate = request.getParameter("start_date");
-            String v_enddate = request.getParameter("end_date");
-            String v_repemail = request.getParameter("rep_email");
+            String v_bookingno = request.getParameter("booking_no");
+            String v_date       = request.getParameter("booked_date");
+            String v_savedate       = request.getParameter("saved_date");
+            String v_confirmdate    = request.getParameter("confirm_date");
+            String v_canceldate    = request.getParameter("cancel_date");
+            String v_numhours     = request.getParameter("num_hours");
+            String v_totalcost     = request.getParameter("totalcost");
+            String v_numpeople     = request.getParameter("num_people");
+            String v_groupno     = request.getParameter("group_no");
+            String offerid     = request.getParameter("offerid");
             
-            TGroups tg = new TGroups();
-
+            Booking book = new Booking();
             // Instantiate the class that will process the registration
                 
-                tg.groupid = v_groupid;
-                tg.start_date = v_startdate;
-                tg.end_date = v_enddate;
-                tg.rep_email = v_repemail;
+                book.booking_no = v_bookingno;
+                book.booked_date = v_date;
+                book.numhours = v_numhours;
+                book.totalcost = v_totalcost;
+                book.numpeople = v_numpeople;
+                book.groupno = v_groupno;
+                book.offerid = offerid;
+                book.saved_date = v_savedate;
+                book.confirmed_date = v_confirmdate;
+                book.cancelled_date = v_canceldate;
                 
-                tg.addGroup();
+
+                book.updateBooking();
             //emp.register();
        
             // Redirect to the correct message page
             String redirectURL;
-            if (tg.group_status == 1)
+            if (book.booking_status==1)
                 redirectURL = "success.html";
             else {
                 redirectURL = "fail.html";
             }
             response.sendRedirect(redirectURL);
         %>                 
+
+
                 </div>
                 <br>
                 <br>
