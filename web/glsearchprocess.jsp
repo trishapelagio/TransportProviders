@@ -38,6 +38,13 @@
 </head>
 
 <body class="loader-active">
+    <%
+        String v_bookingno = request.getParameter("booking_no");
+        
+        Booking book = new Booking();
+        book.searchno = v_bookingno;
+        book.displayBooking();
+        %>
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -85,15 +92,64 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="glsearchprocess.jsp">
-
+							<form action="index.html">
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Enter Booking Number to View</small></label>
-									<input type='text' placeholder='6000000' name="booking_no" id="bn"/>
+                                                                    <strong>Booking Number</strong>
+                                                                    <p><%=book.booking_no%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Booked Date</strong>
+                                                                    <p><%=book.booked_date%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Number of Hours</strong>
+                                                                    <p><%=book.numhours%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Date Saved</strong>
+                                                                    <p><%=book.saved_date%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Confirmed Date</strong>
+                                                                    <p><%=book.confirmed_date%><p>
+                                                                </div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Cancelled Date</strong>
+                                                                    <p><%=book.cancelled_date%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Total Cost</strong>
+                                                                    <p><%=book.totalcost%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Number of People</strong>
+                                                                    <p><%=book.numpeople%><p>
 								</div
+                                                                <br><br>
+                                                                <div class="username">
+                                                                    <strong>Status</strong>
+                                                                    <p><%=book.status%><p>
+								</div
+                                                                <br><br>
+                                                                <div class="username">
+                                                                    <strong>Group Number</strong>
+                                                                    <p><%=book.groupno%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Offer ID</strong>
+                                                                    <p><%=book.offerid%><p>
+								</div>
                                                                 <br>
                                                                 <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Proceed</button>
 								</div>
 							</form>
                 		</div>

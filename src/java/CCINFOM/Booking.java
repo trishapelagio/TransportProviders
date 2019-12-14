@@ -23,6 +23,9 @@ public class Booking {
     public String confirmed_date;
     public String cancelled_date;
     
+    public String status;
+    
+    public String searchno;
 
     public int booking_status;
     
@@ -156,4 +159,45 @@ public class Booking {
             System.out.println("something went wrong " + e.getMessage());
         }
     }
+    
+    public void displayBooking() {
+      try {
+            // 1. Connect to the database
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?autoReconnect=true&useSSL=false&user=root&password=p@ssword");
+            // 2. Prepare the SQL Statement
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM bookings WHERE booking_no = "+searchno);
+            // 3. Execute the SQL Statement
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            // 4. Process the results
+            booking_no = rs.getString("booking_no");
+            booked_date = rs.getString("booked_date");
+            numhours = rs.getString("num_hours");
+            saved_date = rs.getString("saved_date");
+            if(saved_date.equals("9999-12-31"))
+                saved_date = "N/A";
+            confirmed_date = rs.getString("confirmed_date");
+            if(confirmed_date.equals("9999-12-31"))
+                confirmed_date = "N/A";
+            cancelled_date = rs.getString("cancelled_date");
+            if(cancelled_date.equals("9999-12-31"))
+                cancelled_date = "N/A";
+            totalcost = rs.getString("totalcost");
+            numpeople = rs.getString("num_people");
+            status = rs.getString("status");
+            groupno = rs.getString("group_no");
+            offerid = rs.getString("offerid");
+            
+            
+            // 5. Disconnect
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("something went wrong " + e.getMessage());
+        }  
+    }
+    
+    
 }
