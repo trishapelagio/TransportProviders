@@ -36,50 +36,38 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
-
+<body class="loader-active" style="background-image: url(assets/img/blackred.jpg); background-size: 100% ;">
     <!--== Preloader Area Start ==-->
     <div class="preloader">
-        <div class="preloader-spinner">
-            <div class="loader-content">
-                <img src="assets/img/preloader.gif" alt="JSOFT">
-            </div>
-        </div>
-    </div>
-    <!--== Preloader Area End ==-->
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
-
-    <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">1
-            <div class="container">
-                <div class="row">
-                    <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <img src = "assets/img/logo.png"> 
-                    </div>
-                    <!--== Logo End ==-->
-
-                    <!--== Main Menu Start
-                    <div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li><a href="home.html">Home</a> </li>
-                                <li><a href="login.html">Log-in</a></li>
-                                <li><a href="registerindex.html">Register</a></li>
-                                <li><a href="carss.html">Cars</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    Main Menu End ==-->
-                </div>
-            </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--== Header Area End ==-->
+     <div class="preloader-spinner">
+         <div class="loader-content">
+             <img src="assets/img/preloader.gif" alt="JSOFT">
+         </div>
+     </div>
+ </div>
+ <!--== Preloader Area End ==-->
+ <!--== Header Area Start ==-->
+ <header id="header-area" class="fixed-top" style="background-color: black">
+     <!--== Header Bottom Start ==-->
+     <div id="header-bottom">
+         <div class="container">
+             <div class="row">
+                 <!--== Logo Start ==-->
+                 <div class="col-lg-4">
+                     <a href="index.html" class="logo">
+ 
+                         <img src = "assets/img/logo.png">            
+                     
+                     </a>
+                 </div>
+                 <!--== Logo End ==-->
+ 
+             </div>
+         </div>
+     </div>
+     <!--== Header Bottom End ==-->
+ </header>
+ <!--r== Header Area End ==-->
 
     <!--== Slider Area Start ==-->
     <section id="slider-area">

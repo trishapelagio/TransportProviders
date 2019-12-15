@@ -3,34 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1delete.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1searchprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2updateprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/home.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glsearchprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2update.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glcreate.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2searchprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1deleteprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2createprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/src/java/CCINFOM/Booking.java</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glupdate.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glreport.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1update.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2deleteprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1search.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/src/java/CCINFOM/Offerings.java</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2search.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glcreateprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/src/java/CCINFOM/TGroups.java</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2create.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/index.html</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m2delete.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/m1updateprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glreportprocess.jsp</file>
-            <file>file:/G:/My%20Drive/DLSU%20Y2T1/CCINFOM/app/TransportProviders/web/glupdateprocess.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/glsearchprocess.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/glcreateprocess.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/src/java/CCINFOM/Booking.java</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/m2reportprocess.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/src/java/CCINFOM/Offerings.java</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/glcreate.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/glsearch.html</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/glupdateprocess.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/glupdate.jsp</file>
+            <file>file:/C:/Users/ASUS-dm691t/Documents/GitHub/TransportProviders/web/m2report.html</file>
         </group>
     </open-files>
 </project-private>

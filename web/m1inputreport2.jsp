@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Delete</title>
+    <title>Report</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -89,9 +89,9 @@
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
-            <h1 style= "text-align:center" >
-                DELETE<br>
-                TOUR GROUP
+            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
+                Input<br>
+                Report
             </h1>
         </div>
         <br>
@@ -100,23 +100,36 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m1deleteprocess.jsp">
-
+							<form action="m1reportprocess.jsp">
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Enter Group Number to Delete</small></label>
-									<input type='text' placeholder='4000000' name="groupid" id="bn"/>
+                                                                 <% 
+                                                                        String year = request.getParameter("years");
+                                                                        Booking book= new Booking();
+                                                                        book.y = year;
+									book.getMonths();
+                                                                    %>
+                                                                    <input type='hidden' name="year" value = "<%=year%>"/>
+                                                                    <small>Select Month:</small> <select name="month">
+                                                                        <%  int size = book.months.size();
+                                                                            for(int index=0;index<size;index++) { %>
+                                                                            <option value ="<%=book.months.get(index)%>"> <%=book.months.get(index)%> </option>
+                                                                        <% }
+                                                                        %>
+                                                                    </select>
                                                                 </div>
                                                                 <br>
+                                                                
                                                                 <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Search</button>
 								</div>
+                                                                <br>
 							</form>
                 		</div>
                 	</div>
                 </div>
         	</div>
         </div>
-    </section>
+    </section
     <!--== Login Page Content End ==-->
 
     <!--== Scroll Top Area Start ==-->

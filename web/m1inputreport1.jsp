@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Update</title>
+    <title>Report</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
+<body class="loader-active" style="background-image: url(assets/img/blackredcar.jpg); background-size: 100% ;">
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -48,8 +48,10 @@
         </div>
     </div>
     <!--== Preloader Area End ==-->
+
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top" style="background-color: black">
+    <header id="header-area" class="fixed-top">
+
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -57,26 +59,40 @@
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
                         <a href="index.html" class="logo">
-
-                            <img src = "assets/img/logo.png">            
-                        
+                            <img src = "assets/img/zero_logo.png">            
                         </a>
                     </div>
                     <!--== Logo End ==-->
 
+                <!--== Logo End ==-->
+
+                <!--== Main Menu Start ==-->
+                
+                <div class="col-lg-8 d-none d-xl-block">
+                    <nav class="mainmenu alignright">
+                        <ul>
+                            <li><a href="index.html">Group Leader</a> </li>
+                            <li><a href="m1.html">Member 1</a></li>
+                            <li><a href="m2.html">Member 2</a></li>
+                        </ul>
+                    </nav>
                 </div>
+               
+                <!--== Main Menu End ==-->
             </div>
         </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--r== Header Area End ==-->
+    </div>
+    <!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->
+
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
-            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Search<br>
-                Booking
+            <h1 style= "text-align:center ; " >
+                INPUT<br>
+                REPORT
             </h1>
         </div>
         <br>
@@ -85,16 +101,26 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="glreportprocess.jsp">
-
+							<form action="m1inputreport2.jsp">
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Enter Year</small></label>
-									<input type='text' placeholder='2015' name="year" id="bn"/>
-								</div
+                                                                 <% 
+                                                                        Booking book= new Booking();
+									book.getYears();
+                                                                    %>
+                                                                    <small>Select Year:</small> <select name="years">
+                                                                        <%  int size = book.years.size();
+                                                                            for(int index=0;index<size;index++) { %>
+                                                                            <option value ="<%=book.years.get(index)%>"> <%=book.years.get(index)%> </option>
+                                                                        <% }
+                                                                        %>
+                                                                    </select>
+                                                                </div>
                                                                 <br>
+                                                                
                                                                 <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Search</button>
 								</div>
+                                                                <br>
 							</form>
                 		</div>
                 	</div>

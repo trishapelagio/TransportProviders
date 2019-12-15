@@ -72,8 +72,6 @@
 	left: 0;
 	position: absolute;
 	top: 0;
-	height: 100%;
-	width: 100%;
 	z-index: -1;
 }
 
@@ -3067,7 +3065,7 @@ input[type="text"]{
 ================================*/
 
 #page-404-wrap {
-	background-image: url("assets/img/banner.jpg");
+	background-image: url("assets/img/road.jpg");
 	background-position: center center;
 	background-size: cover;
 	color: #fff;

@@ -10,6 +10,8 @@ import java.util.*;
 public class Booking {
     public ArrayList <String> offers = new ArrayList<String>();
     public ArrayList <String> groupnos = new ArrayList<String>();
+    public ArrayList <String> years = new ArrayList<String>();
+    public ArrayList <String> months = new ArrayList<String>();
     
     public String booking_no;
     public String booked_date;
@@ -26,6 +28,8 @@ public class Booking {
     public String status;
     
     public String searchno;
+    
+    public String y;
 
     public int booking_status;
     
@@ -71,28 +75,107 @@ public class Booking {
         }
     }
     
-    public void getOffers() {
-      try {
+    public void getYears() {
+        try {
             // 1. Connect to the database
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection conn;
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?autoReconnect=true&useSSL=false&user=root&password=p@ssword");
             // 2. Prepare the SQL Statement
-            PreparedStatement stmt = conn.prepareStatement("SELECT offerid AS offid FROM offerings ORDER BY offerid");
+            PreparedStatement stmt = conn.prepareStatement("SELECT DISTINCT(YEAR(booked_date)) AS y FROM bookings WHERE status='D' ORDER BY YEAR(booked_date)");
             // 3. Execute the SQL Statement
             ResultSet rs = stmt.executeQuery();
             // 4. Process the results
-            offers.clear();
+            years.clear();
             while (rs.next()) {
-                offers.add(rs.getString("offid"));
+                years.add(rs.getString("y"));
             }
             // 5. Disconnect
             stmt.close();
             conn.close();
         } catch (Exception e) {
             System.out.println("something went wrong" + e.getMessage());
-        }        
-    }   
+        }    
+    } 
+    
+    public void getMonths() {
+      try {
+            // 1. Connect to the database
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?autoReconnect=true&useSSL=false&user=root&password=p@ssword");
+            // 2. Prepare the SQL Statement
+            PreparedStatement stmt = conn.prepareStatement("SELECT DISTINCT(MONTH(booked_date)) AS y FROM bookings WHERE status='D' AND YEAR(booked_date) = ? ORDER BY MONTH(booked_date);");
+            // 3. Execute the SQL Statement
+            stmt.setInt(1, Integer.parseInt(y));
+            ResultSet rs = stmt.executeQuery();
+            // 4. Process the results
+            months.clear();
+            while (rs.next()) {
+                months.add(rs.getString("y"));
+            }
+            // 5. Disconnect
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("something went wrong" + e.getMessage());
+        }           
+    }  
+    
+    public void getMonths2() {
+      try {
+            // 1. Connect to the database
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?autoReconnect=true&useSSL=false&user=root&password=p@ssword");
+            // 2. Prepare the SQL Statement
+            PreparedStatement stmt = conn.prepareStatement("SELECT	DISTINCT MONTH(cb.booked_date) AS y\n" +
+                                                            "	FROM	CLIENT_USERS CU JOIN CLIENT_BOOKINGS CB \n" +
+                                                            "	ON	 CU.EMAIL = CB.EMAIL JOIN BOOKINGS B ON\n" +
+                                                            "    b.booking_no = cb.booking_no\n" +
+                                                            "	WHERE	YEAR(cb.booked_date) =  ? AND \n" +
+                                                            "	B.STATUS = 'D' ORDER BY MONTH(cb.booked_date)");
+            // 3. Execute the SQL Statement
+            stmt.setInt(1, Integer.parseInt(y));
+            ResultSet rs = stmt.executeQuery();
+            // 4. Process the results
+            months.clear();
+            while (rs.next()) {
+                months.add(rs.getString("y"));
+            }
+            // 5. Disconnect
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("something went wrong" + e.getMessage());
+        }           
+    }  
+    public void getYears2() {
+        try {
+            // 1. Connect to the database
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?autoReconnect=true&useSSL=false&user=root&password=p@ssword");
+            // 2. Prepare the SQL Statement
+            PreparedStatement stmt = conn.prepareStatement("SELECT	DISTINCT YEAR(cb.booked_date) AS y\n" +
+                                                            "	FROM	CLIENT_USERS CU JOIN CLIENT_BOOKINGS CB \n" +
+                                                            "	ON	 CU.EMAIL = CB.EMAIL JOIN BOOKINGS B ON\n" +
+                                                            "    b.booking_no = cb.booking_no\n" +
+                                                            "	WHERE	B.STATUS = 'D' ORDER BY YEAR(cb.booked_date)");
+            // 3. Execute the SQL Statement
+            ResultSet rs = stmt.executeQuery();
+            // 4. Process the results
+            years.clear();
+            while (rs.next()) {
+                years.add(rs.getString("y"));
+            }
+            // 5. Disconnect
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("something went wrong" + e.getMessage());
+        }    
+    } 
     
     public void getGroupNos() {
       try {

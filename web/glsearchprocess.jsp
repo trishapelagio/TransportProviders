@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Update</title>
+    <title>Search Results</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
+<body class="loader-active" style="background-image: url(assets/img/blackred.jpg); background-size: 100% ;">
     <%
         String v_bookingno = request.getParameter("booking_no");
         
@@ -46,44 +46,59 @@
         book.displayBooking();
         %>
 
-    <!--== Preloader Area Start ==-->
-    <div class="preloader">
-        <div class="preloader-spinner">
-            <div class="loader-content">
-                <img src="assets/img/preloader.gif" alt="JSOFT">
-            </div>
-        </div>
-    </div>
-    <!--== Preloader Area End ==-->
-    <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top" style="background-color: black">
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
-            <div class="container">
-                <div class="row">
-                    <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+        
 
-                            <img src = "assets/img/logo.png">            
-                        
-                        </a>
+            <!--== Preloader Area Start ==-->
+            <div class="preloader">
+                <div class="preloader-spinner">
+                    <div class="loader-content">
+                        <img src="assets/img/preloader.gif" alt="JSOFT">
                     </div>
-                    <!--== Logo End ==-->
-
                 </div>
             </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--r== Header Area End ==-->
+            <!--== Preloader Area End ==-->
+        
+            <!--== Header Area Start ==-->
+            <header id="header-area" class="fixed-top">
+        
+                <!--== Header Bottom Start ==-->
+                <div id="header-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <!--== Logo Start ==-->
+                            <div class="col-lg-4">
+                                <a href="index.html" class="logo">
+                                    <img src = "assets/img/zero_logo.png">            
+                                </a>
+                            </div>
+                            <!--== Logo End ==-->
+        
+                            <!--== Main Menu Start ==-->
+                            
+                            <div class="col-lg-8 d-none d-xl-block">
+                                <nav class="mainmenu alignright">
+                                    <ul>
+                                        <li><a href="index.html">Group Leader</a> </li>
+                                        <li><a href="m1.html">Member 1</a></li>
+                                        <li><a href="m2.html">Member 2</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                           
+                            <!--== Main Menu End ==-->
+                        </div>
+                    </div>
+                </div>
+                <!--== Header Bottom End ==-->
+            </header>
+     <!--== Header Area End ==-->
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
-            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Search<br>
-                Booking
+            <h1 style= "text-align:center ;" >
+                SEARCH<br>
+                BOOKING
             </h1>
         </div>
         <br>
@@ -157,7 +172,7 @@
                 </div>
         	</div>
         </div>
-    </section
+    </section>
     <!--== Login Page Content End ==-->
 
     <!--== Scroll Top Area Start ==-->

@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Delete</title>
+    <title>Report</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
     <![endif]-->
 </head>
 
-<body class="loader-active" style="background-image: url(assets/img/blackredcar.jpg); background-size: 100% ;">
+<body class="loader-active" style="background-image: url(assets/img/sportscar.jpg); background-size: 100%">
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -64,8 +64,6 @@
                     </div>
                     <!--== Logo End ==-->
 
-                <!--== Logo End ==-->
-
                 <!--== Main Menu Start ==-->
                 
                 <div class="col-lg-8 d-none d-xl-block">
@@ -85,13 +83,12 @@
     <!--== Header Bottom End ==-->
 </header>
 <!--== Header Area End ==-->
-
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
-            <h1 style= "text-align:center" >
-                DELETE<br>
-                TOUR GROUP
+            <h1 style= "text-align:center ;" >
+                INPUT<br>
+                REPORT
             </h1>
         </div>
         <br>
@@ -100,16 +97,26 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m1deleteprocess.jsp">
-
+							<form action="m2inputreport2.jsp">
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Enter Group Number to Delete</small></label>
-									<input type='text' placeholder='4000000' name="groupid" id="bn"/>
+                                                                 <% 
+                                                                        Booking book= new Booking();
+									book.getYears2();
+                                                                    %>
+                                                                    <small>Select Year:</small> <select name="years">
+                                                                        <%  int size = book.years.size();
+                                                                            for(int index=0;index<size;index++) { %>
+                                                                            <option value ="<%=book.years.get(index)%>"> <%=book.years.get(index)%> </option>
+                                                                        <% }
+                                                                        %>
+                                                                    </select>
                                                                 </div>
                                                                 <br>
+                                                                
                                                                 <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Search</button>
 								</div>
+                                                                <br>
 							</form>
                 		</div>
                 	</div>

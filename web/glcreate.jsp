@@ -37,7 +37,7 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
+<body class="loader-active" style="background-image: url(assets/img/blackred.jpg); background-size: 100% ;">
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -48,8 +48,10 @@
         </div>
     </div>
     <!--== Preloader Area End ==-->
+
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top" style="background-color: black">
+    <header id="header-area" class="fixed-top">
+
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -57,26 +59,37 @@
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
                         <a href="index.html" class="logo">
-
-                            <img src = "assets/img/logo.png">            
-                        
+                            <img src = "assets/img/zero_logo.png">            
                         </a>
                     </div>
                     <!--== Logo End ==-->
 
+                    <!--== Main Menu Start ==-->
+                    
+                    <div class="col-lg-8 d-none d-xl-block">
+                        <nav class="mainmenu alignright">
+                            <ul>
+                                <li><a href="index.html">Group Leader</a> </li>
+                                <li><a href="m1.html">Member 1</a></li>
+                                <li><a href="m2.html">Member 2</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                    <!--== Main Menu End ==-->
                 </div>
             </div>
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--r== Header Area End ==-->
+    <!--== Header Area End ==-->
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
-            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Booking<br>
-                Creation
+            <h1 style= text-align:center; >
+                BOOKING<br>
+                CREATION
             </h1>
         </div>
         <br>

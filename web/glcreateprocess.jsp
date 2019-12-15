@@ -36,7 +36,7 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
+<body class="loader-active" style="background-image: url(assets/img/blackred.jpg); background-size: 100% ;">
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -50,35 +50,38 @@
 
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
+
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <img src = "assets/img/logo.png"> 
+                        <a href="index.html" class="logo">
+                            <img src = "assets/img/zero_logo.png">            
+                        </a>
                     </div>
                     <!--== Logo End ==-->
 
-                    <!--== Main Menu Start
+                    <!--== Main Menu Start ==-->
+                    
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="home.html">Home</a> </li>
-                                <li><a href="login.html">Log-in</a></li>
-                                <li><a href="registerindex.html">Register</a></li>
-                                <li><a href="carss.html">Cars</a></li>
+                                <li><a href="index.html">Group Leader</a> </li>
+                                <li><a href="m1.html">Member 1</a></li>
+                                <li><a href="m2.html">Member 2</a></li>
                             </ul>
                         </nav>
                     </div>
-                    Main Menu End ==-->
+                   
+                    <!--== Main Menu End ==-->
                 </div>
             </div>
         </div>
         <!--== Header Bottom End ==-->
     </header>
     <!--== Header Area End ==-->
-
     <!--== Slider Area Start ==-->
     <section id="slider-area">
         <!--== slide Item One ==-->
@@ -140,9 +143,7 @@
                 <br>
                 
                 <form action = "" align="center">
-                            <div class="log-btn btn-lg">
-				<button type="submit">               Proceed             </button>
-                            </div>
+                 <a href="index.html" class="btn-404-home"><i class="fa fa-home"></i>Proceed</a>
                 </form>
             </div>
         </div>

@@ -37,7 +37,7 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
+<body class="loader-active" style="background-image: url(assets/img/blackred.jpg); background-size: 100% ;">
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -74,9 +74,9 @@
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
-            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Generate<br>
-                Report
+            <h1 style= "text-align:center;" >
+                REPORT<br>
+                GENERATION
             </h1>
         </div>
         <br>
@@ -85,21 +85,25 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m2reportprocess.jsp">
+							<form action="glreportprocess.jsp">
 
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Enter Month (1 - 12)</small></label>
-									<input type='text' placeholder='1' name="month" id="bn"/>
-								</div
-                                                                <br>
-                                                                <div class="username">
-                                                                    <label for="bn"><small>Enter Year</small></label>
-                                                                    <input type='text' placeholder='2015' name="year" id="bn"/>
+                                                                    <% 
+                                                                        Booking book= new Booking();
+									book.getYears();
+                                                                    %>
+                                                                    <small>Select Year:</small> <select name="years">
+                                                                        <%  int size = book.years.size();
+                                                                            for(int index=0;index<size;index++) { %>
+                                                                            <option value ="<%=book.years.get(index)%>"> <%=book.years.get(index)%> </option>
+                                                                        <% }
+                                                                        %>
+                                                                    </select>
                                                                 </div>
-                                                                <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Search</button>
-								</div>
                                                                 <br>
+                                                                <div class="log-btn">
+									<button type="submit"><i class="fa fa-check-square"></i> Generate Report</button>
+								</div>
 							</form>
                 		</div>
                 	</div>

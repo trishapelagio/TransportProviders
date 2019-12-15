@@ -36,49 +36,52 @@
     <![endif]-->
 </head>
 
-<body class="loader-active">
-
-    <!--== Preloader Area Start ==-->
-    <div class="preloader">
-        <div class="preloader-spinner">
-            <div class="loader-content">
-                <img src="assets/img/preloader.gif" alt="JSOFT">
-            </div>
+ <!--== Preloader Area Start ==-->
+ <div class="preloader">
+    <div class="preloader-spinner">
+        <div class="loader-content">
+            <img src="assets/img/preloader.gif" alt="JSOFT">
         </div>
     </div>
-    <!--== Preloader Area End ==-->
+</div>
+<!--== Preloader Area End ==-->
 
-    <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
-            <div class="container">
-                <div class="row">
-                    <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <img src = "assets/img/logo.png"> 
-                    </div>
-                    <!--== Logo End ==-->
+<!--== Header Area Start ==-->
+<header id="header-area" class="fixed-top">
 
-                    <!--== Main Menu Start
-                    <div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li><a href="home.html">Home</a> </li>
-                                <li><a href="login.html">Log-in</a></li>
-                                <li><a href="registerindex.html">Register</a></li>
-                                <li><a href="carss.html">Cars</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    Main Menu End ==-->
+    <!--== Header Bottom Start ==-->
+    <div id="header-bottom">
+        <div class="container">
+            <div class="row">
+                <!--== Logo Start ==-->
+                <div class="col-lg-4">
+                    <a href="index.html" class="logo">
+                        <img src = "assets/img/zero_logo.png">            
+                    </a>
                 </div>
-            </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--== Header Area End ==-->
+                <!--== Logo End ==-->
 
+            <!--== Logo End ==-->
+
+            <!--== Main Menu Start ==-->
+            
+            <div class="col-lg-8 d-none d-xl-block">
+                <nav class="mainmenu alignright">
+                    <ul>
+                        <li><a href="index.html">Group Leader</a> </li>
+                        <li><a href="m1.html">Member 1</a></li>
+                        <li><a href="m2.html">Member 2</a></li>
+                    </ul>
+                </nav>
+            </div>
+           
+            <!--== Main Menu End ==-->
+        </div>
+    </div>
+</div>
+<!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->
     <!--== Slider Area Start ==-->
     <section id="slider-area">
         <!--== slide Item One ==-->
