@@ -103,9 +103,15 @@
             String v_offerid        = request.getParameter("offerid");
             String v_date           = request.getParameter("date");
             String v_confirmdate    = request.getParameter("confirmed_date");
+            if(v_confirmdate.equals(""))
+                v_confirmdate = "9999-12-31";
             String v_canceldate     = request.getParameter("cancelled_date");
+            if(v_canceldate.equals(""))
+                v_canceldate = "9999-12-31";
             String v_email_tp       = request.getParameter("email_tp");
             String v_substituted_by = request.getParameter("substituted_by");
+            if(v_substituted_by.equals(""))
+                v_substituted_by = null;
             String v_base_rate      = request.getParameter("base_rate");
             String v_hour_rate      = request.getParameter("hour_rate");    
             

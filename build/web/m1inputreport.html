@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Update</title>
+    <title>Report</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -75,8 +75,8 @@
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Offering<br>
-                Update
+                Input<br>
+                Report
             </h1>
         </div>
         <br>
@@ -85,20 +85,21 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m2updateprocess.jsp">
-                                                            <span><strong>Search an Offering</strong></span>
-                                                                <br>
+							<form action="m1reportprocess.jsp">
+
+                                                                <div class="username">
+                                                                    <label for="bn"><small>Enter Month (1 - 12)</small></label>
+									<input type='text' placeholder='1' name="month" id="bn"/>
+								</div
                                                                 <br>
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Offering ID</small></label>
-									<input type='text' placeholder='5000100' name="offerid" id="bn"/>
+                                                                    <label for="bn"><small>Enter Year</small></label>
+                                                                    <input type='text' placeholder='2015' name="year" id="bn"/>
+                                                                </div>
+                                                                <div class="log-btn">
+									<button type="submit"><i class="fa fa-check-square"></i> Search</button>
 								</div>
                                                                 <br>
-                                                                
-                                                                <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
-								</div>
-                                                                
 							</form>
                 		</div>
                 	</div>

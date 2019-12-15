@@ -30,7 +30,7 @@ public class Offerings {
 
     public int offering_status;
     
-    public int searchno;
+    public String searchno;
     
     public void addOfferings() {
         try {
@@ -77,12 +77,17 @@ public class Offerings {
             
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?"+"user=root&password=p@ssword");
             // 2. Prepare the SQL Statement
-            PreparedStatement stmt = conn.prepareStatement("UPDATE OFFERINGS SET date=?,email_tp=?,hour_rate=? WHERE offerid=?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE OFFERINGS SET date=?,email_tp=?,hour_rate=?,base_rate=?, confirmed_date=?,cancelled_date=?, status=?, substituted_by=? WHERE offerid=?");
                 
                 stmt.setString(1, date);
                 stmt.setString(2, email_tp);
                 stmt.setFloat(3,Float.parseFloat(hour_rate));
                 stmt.setFloat(4,Float.parseFloat(base_rate));
+                stmt.setString(5,confirmed_date);
+                stmt.setString(6,cancelled_date);
+                stmt.setString(7,status);
+                stmt.setString(8,substituted_by);
+                stmt.setString(9,offerid);
                 
                 // 3. Execute the SQL Statement
                 stmt.executeUpdate();
@@ -144,19 +149,25 @@ public class Offerings {
             Connection c;
             c = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?" + "user=root&password=p@ssword");
             
-            // 2. Prepare the SQL Statement
-            PreparedStatement ps = c.prepareStatement("DELETE FROM OFFERINGS WHERE offerid=?");
-            
-                ps.setInt(1, Integer.parseInt(offerid));
-                
-                // 3. Execute the SQL Statement
-                ps.executeUpdate();
-            
-            // 4. Process the results
+            // 2. Prepare and Execute
+            PreparedStatement ps = c.prepareStatement("SET FOREIGN_KEY_CHECKS=0");
+              
+            // 3. Execute                
+
+            ps.executeUpdate();
+            ps.close();
+            ps = c.prepareStatement("DELETE FROM OFFERINGS WHERE offerid = ?");
+            ps.setInt(1, Integer.parseInt(offerid));
+            ps.executeUpdate();
+            ps.close();
+            ps = c.prepareStatement("SET FOREIGN_KEY_CHECKS=1");
+            ps.executeUpdate();
+            ps.close();
+
+            // 4.Process
             offering_status = 1;
             
             // 5. Disconnect
-            ps.close();
             c.close();
         }
         catch(Exception e) {

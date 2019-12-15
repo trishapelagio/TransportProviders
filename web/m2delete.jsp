@@ -76,7 +76,7 @@
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
                 Delete<br>
-                Tour Group
+                Offerings
             </h1>
         </div>
         <br>
@@ -85,7 +85,7 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m1deleteprocess.jsp">
+							<form action="m2deleteprocess.jsp">
 
                                                                 <div class="username">
                                                                     <label for="bn"><small>Enter Offering ID to Delete</small></label>
@@ -93,7 +93,7 @@
                                                                 </div>
                                                                 <br>
                                                                 <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Delete</button>
 								</div>
 							</form>
                 		</div>

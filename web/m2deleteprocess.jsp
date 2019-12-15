@@ -114,7 +114,7 @@
        
             // Redirect to the correct message page
             String redirectURL;
-            if (offer.status == 1)
+            if (offer.offering_status == 1)
                 redirectURL = "success.html";
             else {
                 redirectURL = "fail.html";

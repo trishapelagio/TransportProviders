@@ -125,7 +125,7 @@ public class Booking {
             
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?"+"user=root&password=p@ssword");
             // 2. Prepare the SQL Statement
-            PreparedStatement stmt = conn.prepareStatement("UPDATE BOOKINGS SET booked_date=?,num_hours=?,totalcost=?,num_people=?,status=?,isGroup=?,group_no=?,offerid=?, saved_date=?, confirmed_date=?, cancelled_date=? WHERE booking_no=?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE BOOKINGS SET booked_date=?,num_hours=?,totalcost=?,num_people=?,status=?,isGroup=?,group_no=?,offerid=?, saved_date=?, confirmed_date=?, cancelled_date=?, status=? WHERE booking_no=?");
                 
                 stmt.setString(1,booked_date);
                 stmt.setInt(2,Integer.parseInt(numhours));
@@ -141,7 +141,8 @@ public class Booking {
                 stmt.setString(9,saved_date);
                 stmt.setString(10,confirmed_date);
                 stmt.setString(11,cancelled_date);
-                stmt.setInt(12,Integer.parseInt(booking_no));
+                stmt.setString(12,status);
+                stmt.setInt(13,Integer.parseInt(booking_no));
                 
                 // 3. Execute the SQL Statement
                 stmt.executeUpdate();

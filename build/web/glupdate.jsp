@@ -109,7 +109,13 @@
                                                                     <label for="clday"><small>Cancel Date</small></label>
 									<input type='text' placeholder='2019-12-31' name="cancel_date" id="clday"/>
 								</div>
-                                                            	
+                                                                <br>
+                                                                <div class="username">
+                                                                    <label for="clday"><small>Status</small></label><br>
+                                                                    <small><i>D (Done), P (Pending), A (Approved), C (Cancelled)</i></small>
+                                                                    <input type='text' placeholder='A' name="status" id="clday"/>
+								</div>
+                                                                <br>
                                                                 <div class="name">
                                                                         <div class="row">
 										<div class="col-md-6">

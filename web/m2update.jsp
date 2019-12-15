@@ -75,7 +75,7 @@
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Booking<br>
+                Offering<br>
                 Update
             </h1>
         </div>
@@ -93,17 +93,46 @@
                                                                     <label for="bn"><small>Offering ID</small></label>
 									<input type='text' placeholder='5000100' name="offerid" id="bn"/>
 								</div>
+                                                                <br>
                                                                 <div class="username">
-                                                                    <label for="np"><small>Email</small></label>
-									<input type='text' placeholder='juan@zero.com' name="tp_email" id="np"/>
+                                                                    <label for="np"><small>Transport Provider Email</small></label>
+									<input type='text' placeholder='juan@zero.com' name="email_tp" id="np"/>
 								</div>
                                                                 <br>
-                                                                
                                                                 <div class="username">
-                                                                    <label for="bday"><small>Date</small></label>
+                                                                    <label for="np"><small>Transport Provider Substitute Email</small></label>
+									<input type='text' placeholder='juan@zero.com' name="substituted_by" id="np"/>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <label for="np"><small>Status</small></label>
+									<input type='text' placeholder='NA (Not Available) or A (Available)' name="status" id="np"/>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <label for="bday"><small>Booking Date</small></label>
 									<input type='text' placeholder='2019-12-31' name="date" id="bday"/>
 								</div>
-                                                            	
+                                                                <br>
+                                                                <div class="name">
+                                                                        <div class="row">
+										<div class="col-md-6">
+                                                                                    <small>Confirmed Date</small>
+										</div>
+										<div class="col-md-6">
+                                                                                    <small>Cancelled Date</small>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<input type="text" placeholder="2019-12-31" name="confirmed_date">
+										</div>
+										<div class="col-md-6">
+											<input type="text" placeholder="2019-12-31" name="cancelled_date">
+										</div>
+									</div>
+								</div>
+                                                                <br>
                                                                 <div class="name">
                                                                         <div class="row">
 										<div class="col-md-6">

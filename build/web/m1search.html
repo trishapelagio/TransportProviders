@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
+<%@page import = "CCINFOM.*, java.util.*"%>
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Log-in</title>
+    <title>Search</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -47,10 +48,8 @@
         </div>
     </div>
     <!--== Preloader Area End ==-->
-
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-
+    <header id="header-area" class="fixed-top" style="background-color: black">
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -58,69 +57,52 @@
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
                         <a href="index.html" class="logo">
-                            <!--== insert logo here ==-->           
+
+                            <img src = "assets/img/logo.png">            
+                        
                         </a>
                     </div>
                     <!--== Logo End ==-->
 
-                    <!--== Main Menu Start ==-->
-                    
-                    <div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li><a href="home.html">Home</a> </li>
-                                <li><a href="login.html">Log-in</a></li>
-                                <li><a href="registerindex.html">Register</a></li>
-                                <li><a href="cars.html">Cars</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                   
-                    <!--== Main Menu End ==-->
                 </div>
             </div>
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--== Header Area End ==-->
+    <!--r== Header Area End ==-->
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
+        <div id="cur">
+            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
+                Search<br>
+                Booking
+            </h1>
+        </div>
+        <br>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-8 m-auto">
+                <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-                			<h3>Welcome Back!</h3>
-							<form action="index.html">
-								<div class="username">
-									<input type="text" placeholder="Email or Username">
-								</div>
-								<div class="password">
-									<input type="password" placeholder="Password">
-								</div>
-								<div class="log-btn">
-									<button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
+							<form action="m1searchprocess.jsp">
+
+                                                                <div class="username">
+                                                                    <label for="bn"><small>Enter Group ID to View</small></label>
+									<input type='text' placeholder='500000' name="groupid" id="bn"/>
+								</div
+                                                                <br>
+                                                                <div class="log-btn">
+									<button type="submit"><i class="fa fa-check-square"></i> Search</button>
 								</div>
 							</form>
-                		</div>
-                		
-                		<div class="login-other">
-                			<span class="or">or</span>
-                			<h6><p>Don't have an account? <a href="register.html">Sign Up</a></p></h6>
-                		</div>
-                		<div class="login-menu">
-                			<a href="about.html">About</a>
                 		</div>
                 	</div>
                 </div>
         	</div>
         </div>
-    </section>
+    </section
     <!--== Login Page Content End ==-->
-
-    </section>
-    <!--== Footer Area End ==-->
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
@@ -156,9 +138,8 @@
     <!--=== Slicknav Min Js ===-->
     <script src="assets/js/plugins/slicknav.min.js"></script>
 
-    <!--=== Mian Js ===-->
+    <!--=== Main Js ===-->
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

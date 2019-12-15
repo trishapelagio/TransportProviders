@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
+<%@page import = "CCINFOM.*, java.util.*"%>
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Register</title>
+    <title>Search</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +37,14 @@
     <![endif]-->
 </head>
 
-<body class="loader-active" style="background-image: url(assets/img/page-title.jpg);">
+<body class="loader-active">
+    <%
+        String v_groupid = request.getParameter("groupid");
+
+        TGroups tg = new TGroups();
+        tg.search_id = v_groupid;
+        tg.displayGroup();
+        %>
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -47,9 +55,8 @@
         </div>
     </div>
     <!--== Preloader Area End ==-->
-
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
+    <header id="header-area" class="fixed-top" style="background-color: black">
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -58,46 +65,66 @@
                     <div class="col-lg-4">
                         <a href="index.html" class="logo">
 
-                            <img src = "assets/img/logo.png">         
+                            <img src = "assets/img/logo.png">            
                         
                         </a>
                     </div>
                     <!--== Logo End ==-->
+
                 </div>
             </div>
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--== Header Area End ==-->
+    <!--r== Header Area End ==-->
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
+        <div id="cur">
+            <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
+                Search<br>
+                Booking
+            </h1>
+        </div>
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-                            <h3>Register As</h3>
-                            
-                                    <div class="log-btn">
-                                        <form action="registeruser.html">
-                                            <button type="submit">New Client</button>
-                                        </form>
-                                            <span class="or">or</span>
-                                        <form action="registerprov.html">
-                                            <button type="submit">Transport Provider</button>
-                                        </form>
-                                            <span class="or">or</span>
-                                        <form action="registeremp.html">
-                                            <button type="submit">Employee</button>
-                                        </form>
-                                    </div>
+							<form action="index.html">
+                                                                <div class="username">
+                                                                    <strong>Group ID</strong>
+                                                                    <p><%=tg.groupid%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Start Date</strong>
+                                                                    <p><%=tg.start_date%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>End Date</strong>
+                                                                    <p><%=tg.end_date%><p>
+								</div>
+                                                                <br>
+                                                                <div class="username">
+                                                                    <strong>Email of the Representative</strong>
+                                                                    <p><%=tg.rep_email%><p>
+								</div>
+                                                                <br>
+                                                                
+                                                                <br>
+                                                                <div class="log-btn">
+									<button type="submit"><i class="fa fa-check-square"></i> Proceed</button>
+								</div>
+							</form>
                 		</div>
                 	</div>
                 </div>
         	</div>
         </div>
-    </section>
+    </section
     <!--== Login Page Content End ==-->
 
     <!--== Scroll Top Area Start ==-->
@@ -134,9 +161,8 @@
     <!--=== Slicknav Min Js ===-->
     <script src="assets/js/plugins/slicknav.min.js"></script>
 
-    <!--=== Mian Js ===-->
+    <!--=== Main Js ===-->
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

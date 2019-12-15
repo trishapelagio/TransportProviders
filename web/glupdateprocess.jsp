@@ -47,11 +47,13 @@
         </div>
     </div>
     <!--== Preloader Area End ==-->
+        <!--== Header Bottom Start ==-->
+        <div id="header-bottom">
 
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
         <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
+        <div id="header-bottom">1
             <div class="container">
                 <div class="row">
                     <!--== Logo Start ==-->
@@ -94,6 +96,7 @@
                                 <div class="slider-right-text">
                                     <h1>WE ARE PROCESSING YOUR REQUEST</h1>
                                     <p>PLEASE WAIT</p>
+                                    <a href="glreport.html"></a>
                                 </div>
                             </div>
                         </div>
@@ -103,13 +106,20 @@
             String v_bookingno = request.getParameter("booking_no");
             String v_date       = request.getParameter("booked_date");
             String v_savedate       = request.getParameter("saved_date");
+            if(v_savedate.equals(""))
+                v_savedate = "9999-12-31";
             String v_confirmdate    = request.getParameter("confirm_date");
+            if(v_confirmdate.equals(""))
+                v_confirmdate = "9999-12-31";
             String v_canceldate    = request.getParameter("cancel_date");
+            if(v_canceldate.equals(""))
+                v_canceldate = "9999-12-31";
             String v_numhours     = request.getParameter("num_hours");
             String v_totalcost     = request.getParameter("totalcost");
             String v_numpeople     = request.getParameter("num_people");
             String v_groupno     = request.getParameter("group_no");
-            String offerid     = request.getParameter("offerid");
+            String v_offerid     = request.getParameter("offerid");
+            String v_status   = request.getParameter("status");
             
             Booking book = new Booking();
             // Instantiate the class that will process the registration
@@ -120,14 +130,13 @@
                 book.totalcost = v_totalcost;
                 book.numpeople = v_numpeople;
                 book.groupno = v_groupno;
-                book.offerid = offerid;
+                book.offerid = v_offerid;
                 book.saved_date = v_savedate;
                 book.confirmed_date = v_confirmdate;
                 book.cancelled_date = v_canceldate;
+                book.status = v_status;
                 
-
                 book.updateBooking();
-            //emp.register();
        
             // Redirect to the correct message page
             String redirectURL;

@@ -94,7 +94,7 @@
 									<input type='text' placeholder='5000100' name="offerid" id="bn"/>
 								</div>
                                                                 <div class="username">
-                                                                    <label for="np"><small>Email</small></label>
+                                                                    <label for="np"><small>Transportation Provider Email</small></label>
 									<input type='text' placeholder='juan@zero.com' name="email_tp" id="np"/>
 								</div>
                                                                 <br>

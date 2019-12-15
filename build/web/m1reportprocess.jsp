@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-<%@page import = "CCINFOM.*, java.util.*"%>
+<%@page import = "CCINFOM.*, java.util.*, java.sql.*"%>
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Update</title>
+    <title>View Report</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -75,8 +75,8 @@
     <section id="lgoin-page-wrap" class="section-padding">
         <div id="cur">
             <h1 style= "font-family: Verdana; font-size : 400%; text-align:center ; color: black" >
-                Offering<br>
-                Update
+                Report<br>
+                Generation
             </h1>
         </div>
         <br>
@@ -85,20 +85,62 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-							<form action="m2updateprocess.jsp">
-                                                            <span><strong>Search an Offering</strong></span>
-                                                                <br>
+                                    <%
+            // 1. Connect to the database
+            String v_month = request.getParameter("month");
+            String v_year = request.getParameter("year");
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection c;
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3307/transportation?autoReconnect=true&useSSL=false&user=root&password=p@ssword");
+            // 2. Prepare the SQL Statement
+
+            PreparedStatement ps = c.prepareStatement(" SELECT A.DAY, A.NUMCOMPLETED, C.TOTALSALES " +
+                                                        "FROM (SELECT DAY(b.booked_date) AS DAY, COUNT(b.status) AS NUMCOMPLETED "+
+                                                                        "FROM bookings b "+
+                                                                "WHERE b.status = 'D' and year(b.booked_date) = "+v_year+" AND MONTH(b.booked_date) ="+v_month+" "+
+                                                                "GROUP BY DAY(b.booked_date) "+
+                                                                "ORDER BY b.status, DAY(b.booked_date) "+
+                                                                ") A LEFT JOIN (SELECT DAY(bbb.booked_date) AS DAY, SUM(t.transamount) AS TOTALSALES "+
+                                                                                "FROM bookings bbb JOIN client_bookings c ON bbb.booking_no = c.booking_no "+
+                                                                                "JOIN transactions t ON t.bookcid = c.bookcid "+
+                                                                                "WHERE bbb.status='D' AND YEAR(bbb.booked_date) = "+v_year+" AND MONTH(bbb.booked_date) ="+v_month+" "+
+                                                                                "GROUP BY DAY(bbb.booked_date) "+
+                                                                                "ORDER BY bbb.status, MONTH(bbb.booked_date) "+
+                                                                                ") C ON A.DAY = C.DAY");
+            // 3. Execute the SQL Statement
+            
+            ResultSet rs = ps.executeQuery();
+            
+            // 4. Process the results
+                
+            // 5. Disconnect
+            
+         %>
+							<form action="index.html">
+                                                                <div class="username">
+                                                                    <strong>Daily Complete Bookings <br>and Total Sales</strong>
+								</div>
                                                                 <br>
                                                                 <div class="username">
-                                                                    <label for="bn"><small>Offering ID</small></label>
-									<input type='text' placeholder='5000100' name="offerid" id="bn"/>
-								</div>
-                                                                <br>
-                                                                
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Day</th>
+                                                                            <th>Completed Bookings</th>
+                                                                            <th>Total Sales</th>
+                                                                        </tr>
+                                                                        <%    while(rs.next()) {
+                                                                       %> <tr>                                                            
+                                                                            <td><%=rs.getString("A.DAY")%></td>
+                                                                            <td><%=rs.getString("A.NUMCOMPLETED")%></td>
+                                                                            <td><%=rs.getString("C.TOTALSALES")%></td>
+                                                                        </tr>
+                                                                           <%} ps.close();
+                                                                               c.close();%>
+                                                                    </table>
+                                                                 </div>
                                                                 <div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Create</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Proceed</button>
 								</div>
-                                                                
 							</form>
                 		</div>
                 	</div>
@@ -144,6 +186,7 @@
 
     <!--=== Main Js ===-->
     <script src="assets/js/main.js"></script>
+                                 
 </body>
 
 </html>

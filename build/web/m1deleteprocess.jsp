@@ -110,7 +110,6 @@
             tg.groupid = v_groupid;
 
             tg.deleteGroup();
-            //emp.register();
        
             // Redirect to the correct message page
             String redirectURL;

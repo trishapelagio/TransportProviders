@@ -94,7 +94,7 @@
                 	<div class="login-page-content">
                 		<div class="login-form">
 							<form action="m2updateprocess.jsp">
-                                                            <span><strong>Create an Offering</strong></span>
+                                                            <span><strong>Offering</strong></span>
                                                                 <br>
                                                                 <br>
                                                                 <div class="username">
@@ -102,15 +102,17 @@
 									<input type='text' placeholder='5000100' name="offerid" id="bn"/>
 								</div>
                                                                 <div class="username">
-                                                                    <label for="np"><small>Email</small></label>
+                                                                    <label for="np"><small>Transport Provider Email</small></label>
 									<input type='text' placeholder='juan@zero.com' name="tp_email" id="np"/>
 								</div>
                                                                 <br>
                                                                 
                                                                 <div class="username">
-                                                                    <label for="bday"><small>Date</small></label>
+                                                                    <label for="bday"><small>Offer Date</small></label>
 									<input type='text' placeholder='2019-12-31' name="date" id="bday"/>
 								</div>
+                                                                
+                                                                
                                                             	
                                                                 <div class="name">
                                                                         <div class="row">
